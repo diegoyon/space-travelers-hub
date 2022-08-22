@@ -48,3 +48,4 @@ Give a ⭐️ if you like this project!
 
 - Microverse
 - SpaceX API
+- Freepik
