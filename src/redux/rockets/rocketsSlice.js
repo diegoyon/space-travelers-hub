@@ -9,9 +9,10 @@ export const fetchRockets = createAsyncThunk(
     try {
       const response = await axios.get(ROCKETS_URL);
       const rocketsObject = response.data.map((rocket) => {
-        const { id, rocket_name, rocket_type, flickr_images } = rocket;
-        return { id, rocket_name, rocket_type, flickr_images };
+        const { id, rocket_name, description, flickr_images } = rocket;
+        return { id, rocket_name, description, flickr_images };
       });
+
       return rocketsObject;
     } catch (err) {
       return err.message;
