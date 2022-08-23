@@ -1,7 +1,6 @@
 .rocket-card img {
   width: 15rem;
   object-fit: cover;
-  /* flex: 0; */
 }
 
 .rocket-card {
