@@ -12,10 +12,10 @@ export const fetchRockets = createAsyncThunk(
       const response = await axios.get(ROCKETS_URL);
       const rocketsObject = response.data.map((rocket) => {
         const {
-          id, rocket_name, rocket_type, flickr_images,
+          id, rocket_name, description, flickr_images,
         } = rocket;
         return {
-          id, rocket_name, rocket_type, flickr_images,
+          id, rocket_name, description, flickr_images, reserved: false,
         };
       });
 
@@ -37,15 +37,15 @@ export const rocketsSlice = createSlice({
   initialState,
   reducers: {
     toggleReserve: (state, action) => {
-      const newState = state.rockets.map(rocket => {
-        const { reserved } = rocket
-        if(rocket.id !== action.payload){
+      const newState = state.rockets.map((rocket) => {
+        const { reserved } = rocket;
+        if (rocket.id !== action.payload) {
           return rocket;
         }
         return { ...rocket, reserved: !reserved };
       });
-      return {...state, rockets: newState}
-    }
+      return { ...state, rockets: newState };
+    },
   },
   extraReducers(builder) {
     builder

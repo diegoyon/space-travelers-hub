@@ -4,6 +4,7 @@ import { fetchRockets } from '../redux/rockets/rocketsSlice';
 import Rocket from '../components/Rocket';
 
 function Rockets() {
+  const rocketList = useSelector((state) => state.rockets.rockets);
   const dispatch = useDispatch();
   const rocketStatus = useSelector((state) => state.rockets.status);
 
@@ -25,7 +26,7 @@ function Rockets() {
     <>
       {content}
     </>
-  )
+  );
 }
 
 export default Rockets;
