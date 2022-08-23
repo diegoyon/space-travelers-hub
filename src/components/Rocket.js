@@ -33,7 +33,7 @@ Rocket.propTypes = {
   id: PropTypes.number.isRequired,
   rocket_name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  flickr_images: PropTypes.array.isRequired,
+  flickr_images: PropTypes.arrayOf(PropTypes.string).isRequired,
   reserved: PropTypes.bool.isRequired,
 };
 
