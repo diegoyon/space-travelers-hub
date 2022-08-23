@@ -10,7 +10,7 @@ function Navbar() {
       <NavLink
         to='/'
         className={({ isActive }) => (
-          isActive ? 'active' : null
+          isActive ? "active" : null
         )}
       >
         Profile
@@ -19,4 +19,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;
