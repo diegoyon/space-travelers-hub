@@ -1,15 +1,15 @@
-import React from 'react'
-import planet from '../images/planet.png';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+import planet from '../images/planet.png';
 import './Navbar.css';
 
 function Navbar() {
   return (
     <nav>
       <img src={planet} alt="planet" />
-      <div className='links'>
+      <div className="links">
         <NavLink
-          to='/'
+          to="/"
           className={({ isActive }) => (
             isActive ? 'active' : null
           )}
@@ -34,7 +34,7 @@ function Navbar() {
         </NavLink>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
