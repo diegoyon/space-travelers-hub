@@ -1,9 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { fetchRockets } from '../redux/rockets/rocketsSlice';
 import Rocket from '../components/Rocket';
 
 function Rockets() {
   const rocketList = useSelector((state) => state.rockets.rockets);
+  const dispatch = useDispatch();
   const rocketStatus = useSelector((state) => state.rockets.status);
 
   let content;
