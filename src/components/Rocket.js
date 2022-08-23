@@ -11,9 +11,11 @@ function Rocket(props) {
   } = props;
   const dispatch = useDispatch();
 
-  let content;
+  let btn;
   if (reserved) {
-    content = <p>reserved</p>;
+    btn = <button type="button" className="cancel" onClick={() => { dispatch(toggleReserve(id)); }}>Cancel Reservation</button>;
+  } else {
+    btn = <button type="button" className="reserve" onClick={() => { dispatch(toggleReserve(id)); }}>Reserve Rocket</button>;
   }
 
   return (
@@ -21,9 +23,13 @@ function Rocket(props) {
       <img src={flickr_images[0]} alt={rocket_name} />
       <div className="details">
         <h2>{rocket_name}</h2>
-        {content}
-        <p>{description}</p>
-        <button type="button" onClick={() => { dispatch(toggleReserve(id)); }}>Reserve Rocket</button>
+        <div>
+          {reserved && (
+            <span className="badge">Reserved</span>
+          )}
+          <span>{description}</span>
+        </div>
+        {btn}
       </div>
     </div>
   );

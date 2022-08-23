@@ -1,11 +1,17 @@
 .rocket-card img {
   width: 15rem;
+  object-fit: cover;
+  /* flex: 0; */
 }
 
 .rocket-card {
   display: flex;
   gap: 1rem;
   margin: 1rem;
+  border: 1px solid black;
+  height: 15rem;
+  align-items: center;
+  padding: 1rem;
 }
 
 .details {
@@ -14,12 +20,31 @@
   gap: 1rem;
 }
 
-.details button {
+.reserve {
   padding: 1rem;
-  background-color: blue;
+  background-color: #007bff;
   color: white;
-  width: fit-content;
+  width: 12rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.cancel {
+  padding: 1rem;
+  background-color: white;
+  color: gray;
+  width: 12rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.badge {
+  background-color: #19a2b8;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  margin-right: 0.2rem;
+  color: white;
+  font-weight: bold;
 }
