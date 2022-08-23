@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/configureStore';
+import { fetchRockets } from './redux/rockets/rocketsSlice';
+
+store.dispatch(fetchRockets());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
