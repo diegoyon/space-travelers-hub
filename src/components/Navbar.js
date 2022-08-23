@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import planet from '../images/planet.png';
 
 function Navbar() {
@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <img src={planet} alt="planet" />
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
