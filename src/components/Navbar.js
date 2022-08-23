@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import planet from '../images/planet.png';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
@@ -29,4 +29,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;

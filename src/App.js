@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Profile from "./pages/Profile";
 import Rockets from "./pages/Rockets";
