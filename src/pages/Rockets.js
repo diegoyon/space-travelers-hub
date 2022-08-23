@@ -15,6 +15,7 @@ function Rockets() {
         description={rocket.description}
         flickr_images={rocket.flickr_images}
         id={rocket.id}
+        reserved={rocket.reserved}
       />
     ));
   }
