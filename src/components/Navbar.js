@@ -17,6 +17,14 @@ function Navbar() {
           Rockets
         </NavLink>
         <NavLink
+          to='/missions'
+          className={({ isActive }) => (
+            isActive ? 'active' : null
+          )}
+        >
+          Missions
+        </NavLink>
+        <NavLink
           to='/profile'
           className={({ isActive }) => (
             isActive ? 'active' : null
