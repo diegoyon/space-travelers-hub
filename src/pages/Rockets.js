@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRockets } from '../redux/rockets/rocketsSlice';
+import Rocket from '../components/Rocket';
 
 function Rockets() {
   const dispatch = useDispatch();
@@ -11,10 +12,24 @@ function Rockets() {
       dispatch(fetchRockets());
     }
   }, [rocketStatus, dispatch]);
+  let content;
+  if (rocketStatus === 'succeeded') {
+    content = rocketList.map((rocket) => (
+      <Rocket
+        key={rocket.id}
+        rocket_name={rocket.rocket_name}
+        description={rocket.description}
+        flickr_images={rocket.flickr_images}
+        id={rocket.id}
+      />
+    ));
+  }
 
   return (
-    <div>Rockets</div>
-  );
+    <>
+      {content}
+    </>
+  )
 }
 
 export default Rockets;

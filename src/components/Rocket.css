@@ -1,0 +1,25 @@
+.rocket-card img {
+  width: 15rem;
+}
+
+.rocket-card{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.details button {
+  padding: 1rem;
+  background-color: blue;
+  color: white;
+  width: fit-content;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -18,6 +18,7 @@ export const fetchRockets = createAsyncThunk(
           id, rocket_name, rocket_type, flickr_images,
         };
       });
+
       return rocketsObject;
     } catch (err) {
       return err.message;
