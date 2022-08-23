@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import Rocket from '../components/Rocket';
 
 function Rockets() {
-  const rocketList = useSelector((state)=> state.rockets.rockets)
-  const rocketStatus = useSelector((state) => state.rockets.status)
-  
+  const rocketList = useSelector((state) => state.rockets.rockets);
+  const rocketStatus = useSelector((state) => state.rockets.status);
+
   let content;
   if (rocketStatus === 'succeeded') {
     content = rocketList.map((rocket) => (
@@ -24,7 +24,7 @@ function Rockets() {
     <>
       {content}
     </>
-  )
+  );
 }
 
-export default Rockets
+export default Rockets;

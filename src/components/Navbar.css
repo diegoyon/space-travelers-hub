@@ -1,4 +1,4 @@
-nav{
+nav {
   display: flex;
   background-color: cadetblue;
   justify-content: space-between;
@@ -10,7 +10,7 @@ nav img {
   height: 5rem;
 }
 
-.links{
+.links {
   display: flex;
   gap: 2rem;
 }
