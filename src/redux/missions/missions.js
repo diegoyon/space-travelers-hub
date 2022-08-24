@@ -21,6 +21,7 @@ export const getMissionsDataAPI = () => async (dispatch) => {
       payload: selectedData,
     });
   } catch (err) {
+    // uncaught catch statement
     // console.log(err);
   }
 };
