@@ -5,12 +5,18 @@ import './Profile.css';
 function Profile() {
   const rocketList = useSelector((state) => state.rockets.rockets);
   const filteredList = rocketList.filter((rocket) => (rocket.reserved === true));
+
+  const missionList = useSelector((state) => state.missions);
+  const filteredListM = missionList.filter((mission) => (mission.reserved === true));
+
   return (
     <>
       <div className="profile">
         <div className="my-missions">
           <h2>My Missions</h2>
-          {/* pending */}
+          {filteredListM.map((mission) => (
+            <p key={mission.id}>{mission.mission_name}</p>
+          ))}
         </div>
         <div className="my-rockets">
           <h2>My Rockets</h2>
