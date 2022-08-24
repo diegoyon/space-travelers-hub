@@ -13,12 +13,6 @@
   padding: 1rem;
 }
 
-.details {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 .reserve {
   padding: 1rem;
   background-color: #007bff;
@@ -27,6 +21,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .cancel {
