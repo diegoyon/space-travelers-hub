@@ -9,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <Header>
       <div className="headerLogo">
         <img src={logo} alt="logo" className="logo" />
         <h1>Space Travelers&apos; Hub</h1>
@@ -20,7 +20,7 @@ const Header = () => {
         <li>|</li>
         <NavLink to="/profile" onClick={handleClick}>My Profile</NavLink>
       </ul>
-    </header>
+    </Header>
   );
 };
 
