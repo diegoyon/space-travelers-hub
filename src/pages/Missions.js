@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-import MissionLi from '../components/missions';
+import MissionLi from '../components/missions.css';
 import { getMissionsDataAPI } from '../redux/missions/missions';
 
 const Missions = () => {
