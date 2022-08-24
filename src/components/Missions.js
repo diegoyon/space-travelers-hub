@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import MissionsTable from './MissionsTable';
-import { fetchMissionsAction } from '../../redux/missions/missions';
+import { fetchMissionsAction } from '../redux/missions/missions';
 
 let initialized = false;
 

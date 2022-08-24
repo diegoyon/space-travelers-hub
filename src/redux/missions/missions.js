@@ -1,4 +1,4 @@
-import fetchMissions from '../../utils/missions-api';
+import fetchMissions from './missions-api';
 
 const FETCH_MISSIONS = 'spaceX/missions/FETCH_MISSIONS';
 const ADD_MISSIONS = 'spaceX/missions/ADD_MISSIONS';
