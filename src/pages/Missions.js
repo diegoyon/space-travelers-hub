@@ -19,7 +19,6 @@ const Missions = () => {
         <p className="mission-name">Mission</p>
         <p className="mission-description">Description</p>
         <p className="mission-status">Status</p>
-        <div className="mission-status">Action</div>
       </li>
       {data.map((mission) => (
         <MissionLi
