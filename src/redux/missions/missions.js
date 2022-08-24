@@ -1,60 +1,48 @@
-import fetchMissions from './missions-api';
+import apiService from '../../api/missionsApi';
 
-const FETCH_MISSIONS = 'spaceX/missions/FETCH_MISSIONS';
-const ADD_MISSIONS = 'spaceX/missions/ADD_MISSIONS';
-const API_SUCCESS = 'spaceX/missions/API_SUCCESS';
-const API_FAILURE = 'spaceX/missions/API_FAILURE';
-const JOIN_MISSION = 'spaceX/missions/JOIN_MISSION';
-const LEAVE_MISSION = 'spaceX/missions/LEAVE_MISSION';
+const GET_MISSIONS_DATA = 'space-thub/misssions/GET_MISSIONS_DATA';
+const JOIN_MISSION = 'space-thub/misssions/JOIN_MISSION';
 
-const initialMissions = [];
-
-export const joinMission = (id) => ({
-  type: JOIN_MISSION,
-  id,
-});
-
-export const leaveMission = (id) => ({
-  type: LEAVE_MISSION,
-  id,
-});
-
-export const fetchMissionsAction = () => (dispatch) => {
-  dispatch({ type: FETCH_MISSIONS });
-  return fetchMissions().then(
-    (missions) => {
-      dispatch({ type: API_SUCCESS });
-      dispatch({ type: ADD_MISSIONS, missions });
-    },
-    (error) => {
-      dispatch({ type: API_FAILURE, error });
-    },
-  );
+export const getMissionsDataAPI = () => async (dispatch) => {
+  try {
+    const res = await apiService.getAll();
+    const { data } = res;
+    const selectedData = [];
+    data.forEach((element) => {
+      selectedData.push({
+        mission_id: element.mission_id,
+        mission_name: element.mission_name,
+        description: element.description,
+        reserved: false,
+      });
+    });
+    dispatch({
+      type: GET_MISSIONS_DATA,
+      payload: selectedData,
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
-const missionsReducer = (state = initialMissions, action) => {
+export const joinMissionAction = (id) => ({
+  type: JOIN_MISSION,
+  payload: id,
+});
+
+const missionsReducer = (state = [], action) => {
   switch (action.type) {
-    case ADD_MISSIONS:
-      return [...state, ...action.missions];
+    case GET_MISSIONS_DATA:
+      return action.payload;
     case JOIN_MISSION:
       return state.map((mission) => {
-        if (mission.id === action.id) {
-          return {
-            ...mission,
-            status: 'Active member',
-          };
+        if (mission.mission_id !== action.payload) {
+          return mission;
         }
-        return mission;
-      });
-    case LEAVE_MISSION:
-      return state.map((mission) => {
-        if (mission.id === action.id) {
-          return {
-            ...mission,
-            status: 'Not a member',
-          };
-        }
-        return mission;
+        return {
+          ...mission,
+          reserved: !mission.reserved,
+        };
       });
     default:
       return state;
