@@ -1,9 +1,9 @@
-import React from 'react';
+import MissionsComponent from '../components/Missions';
 
-function Missions() {
-  return (
-    <div>Missions</div>
-  );
-}
+const Missions = () => (
+  <>
+    <MissionsComponent />
+  </>
+);
 
 export default Missions;
