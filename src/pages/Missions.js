@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-import MissionLi from '../components/missions.css';
+import MissionLi from '../components/Missions';
 import { getMissionsDataAPI } from '../redux/missions/missions';
+import '../components/missions.css';
 
 const Missions = () => {
   const data = useSelector((state) => state.missions);
