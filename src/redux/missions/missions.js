@@ -16,6 +16,7 @@ export const getMissionsDataAPI = () => async (dispatch) => {
         reserved: false,
       });
     });
+    // dispatching action
     dispatch({
       type: GET_MISSIONS_DATA,
       payload: selectedData,
