@@ -4,7 +4,9 @@ import './Profile.css';
 
 function Profile() {
   const rocketList = useSelector((state) => state.rockets.rockets);
+  const missionList = useSelector((state) => state.missions.missions);
   const filteredList = rocketList.filter((rocket) => (rocket.reserved === true));
+  const filteredListM = rocketList.filter((missions) => (missions.reserved === true));
   return (
     <>
       <div className="profile">
