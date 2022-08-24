@@ -1,4 +1,4 @@
-import apiService from '../../api/missionsApi';
+import apiService from './missionsApi';
 
 const GET_MISSIONS_DATA = 'space-thub/misssions/GET_MISSIONS_DATA';
 const JOIN_MISSION = 'space-thub/misssions/JOIN_MISSION';
@@ -21,7 +21,7 @@ export const getMissionsDataAPI = () => async (dispatch) => {
       payload: selectedData,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 

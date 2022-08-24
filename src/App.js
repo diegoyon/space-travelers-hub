@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Rockets />} />
-        <Route path="/missions" exact element={<Missions />} />
+        <Route path="/missions" element={<Missions />} />
         <Route path="/profile" exact element={<Profile />} />
       </Routes>
     </Router>
