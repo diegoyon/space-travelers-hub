@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/navbar/Header';
+import Header from './components/header';
 import Profile from './pages/Profile';
 import Rockets from './pages/Rockets';
 import Missions from './pages/Missions';
