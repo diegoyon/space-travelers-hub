@@ -10,7 +10,7 @@ function Profile() {
       <div className="profile">
         <div className="my-missions">
           <h2>My Missions</h2>
-          {/* pending */}
+          {/* Yet to Implement */}
         </div>
         <div className="my-rockets">
           <h2>My Rockets</h2>
