@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  background-color: cadetblue;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+nav img {
+  height: 5rem;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.active {
+  background-color: orange;
+}
