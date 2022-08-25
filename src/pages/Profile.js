@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getMissionsDataAPI } from '../redux/missions/missions';
+import { useSelector } from 'react-redux';
 import './Profile.css';
 
 function Profile() {
@@ -8,11 +6,6 @@ function Profile() {
   const filteredList = rocketList.filter((rocket) => (rocket.reserved === true));
   const missionList = useSelector((state) => state.missions);
   const filteredListM = missionList.filter((missions) => (missions.reserved === true));
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getMissionsDataAPI());
-  }, []);
 
   return (
     <>
