@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MissionLi renders correctly 1`] = `
+<li
+  className="mission-li"
+>
+  <p
+    className="mission-name"
+    data-testid="name"
+  >
+    Mission impossible
+  </p>
+  <p
+    className="mission-description"
+    data-testid="description"
+  >
+    An impossible mission
+  </p>
+  <div
+    className="mission-status"
+  >
+    <p
+      className="joined"
+    >
+      member
+    </p>
+  </div>
+  <div
+    className="btn-container joined"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      leave
+    </button>
+  </div>
+</li>
+`;

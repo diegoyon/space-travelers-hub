@@ -1,0 +1,13 @@
+.profile {
+  display: flex;
+  gap: 3rem;
+  width: fit-content;
+  margin: auto;
+  margin-top: 4rem;
+}
+
+.profile p {
+  border: 1px solid black;
+  padding: 2rem 1rem;
+  width: 20rem;
+}
