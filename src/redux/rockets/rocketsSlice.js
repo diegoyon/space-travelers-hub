@@ -8,21 +8,23 @@ const ROCKETS_URL = 'https://api.spacexdata.com/v3/rockets';
 export const fetchRockets = createAsyncThunk(
   'users/fetchRockets',
   async () => {
-    try {
-      const response = await axios.get(ROCKETS_URL);
-      const rocketsObject = response.data.map((rocket) => {
-        const {
-          id, rocket_name, description, flickr_images,
-        } = rocket;
-        return {
-          id, rocket_name, description, flickr_images, reserved: false,
-        };
-      });
-
-      return rocketsObject;
-    } catch (err) {
-      return err.message;
+    if (localStorage.getItem('rocketData') === null) {
+      try {
+        const response = await axios.get(ROCKETS_URL);
+        const rocketsObject = response.data.map((rocket) => {
+          const {
+            id, rocket_name, description, flickr_images,
+          } = rocket;
+          return {
+            id, rocket_name, description, flickr_images, reserved: false,
+          };
+        });
+        return rocketsObject;
+      } catch (err) {
+        return err.message;
+      }
     }
+    return JSON.parse(localStorage.getItem('rocketData'));
   },
 );
 

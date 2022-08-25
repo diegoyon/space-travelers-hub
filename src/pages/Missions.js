@@ -7,12 +7,20 @@ import '../components/missions.css';
 const Missions = () => {
   const data = useSelector((state) => state.missions);
   const dispatch = useDispatch();
+
   useEffect(
     () => {
       if (data.length === 0) dispatch(getMissionsDataAPI());
     },
     [],
   );
+
+  useEffect(() => {
+    if (data.length !== 0) {
+      localStorage.setItem('missionsData', JSON.stringify(data));
+    }
+  }, [data]);
+
   return (
     <ul className="missions-container">
       <li className="mission-li">

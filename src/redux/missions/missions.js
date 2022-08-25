@@ -21,7 +21,7 @@ export const getMissionsDataAPI = () => async (dispatch) => {
       payload: selectedData,
     });
   } catch (err) {
-    // console.log(err);
+    // error
   }
 };
 
@@ -33,7 +33,10 @@ export const joinMissionAction = (id) => ({
 const missionsReducer = (state = [], action) => {
   switch (action.type) {
     case GET_MISSIONS_DATA:
-      return action.payload;
+      if (localStorage.getItem('missionsData') === null) {
+        return action.payload;
+      }
+      return (JSON.parse(localStorage.getItem('missionsData')));
     case JOIN_MISSION:
       return state.map((mission) => {
         if (mission.mission_id !== action.payload) {
