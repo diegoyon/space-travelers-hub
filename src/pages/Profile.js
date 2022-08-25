@@ -14,7 +14,7 @@ function Profile() {
         <div className="my-missions">
           <h2>My Missions</h2>
           {filteredListM.map((mission) => (
-            <p key={mission.id}>{mission.mission_name}</p>
+            <p key={mission.mission_id}>{mission.mission_name}</p>
           ))}
         </div>
         <div className="my-rockets">
