@@ -22,12 +22,12 @@ function Rocket(props) {
     <div className="rocket-card">
       <img src={flickr_images[0]} alt={rocket_name} />
       <div className="details">
-        <h2>{rocket_name}</h2>
+        <h2 data-testid="name">{rocket_name}</h2>
         <div>
           {reserved && (
             <span className="badge">Reserved</span>
           )}
-          <span>{description}</span>
+          <span data-testid="description">{description}</span>
         </div>
         {btn}
       </div>

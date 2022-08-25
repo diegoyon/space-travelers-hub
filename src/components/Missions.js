@@ -15,10 +15,10 @@ const MissionLi = ({
 
   return (
     <li className="mission-li">
-      <p className="mission-name">
+      <p className="mission-name" data-testid="name">
         {name}
       </p>
-      <p className="mission-description">
+      <p className="mission-description" data-testid="description">
         {description}
       </p>
       <div className="mission-status">
