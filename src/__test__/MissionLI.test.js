@@ -23,16 +23,16 @@ test('check snapshot of missions list', () => {
   expect(component).toMatchSnapshot();
 });
 
-test('check snapshot of missions list 2', () => {
+test('check snapshot of missions list', () => {
   const component = render(
     <React.StrictMode>
       <Provider store={store}>
         <Router>
           <MissionLi
-            name="mission 2"
-            description="new description 2"
-            reserved
-            id="8"
+            name="mission"
+            description="new description"
+            reserved={false}
+            id="2"
           />
         </Router>
       </Provider>
